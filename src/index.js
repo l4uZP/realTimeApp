@@ -1,6 +1,9 @@
 import app from './app';
 import {Server as WebsocketServer} from 'socket.io';
 import http from 'http';
+import { dbConection } from './db';
+
+dbConection();
 
 const server = http.createServer(app); //pasar el servidor express a http
 const httpServer = server.listen(3000);
